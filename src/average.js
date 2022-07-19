@@ -10,9 +10,30 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+function arrayValidation(array) {
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+  }
+  return true;
+}
 
-const average = () => {
-  // adicione seu codigo aqui
+const average = (array) => {
+  let sum = 0;
+  const validation = arrayValidation(array);
+  if (!validation) {
+    return validation;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    sum += array[index];
+  }
+  const avg = Math.round(sum / array.length);
+  return avg;
 };
 
+console.log(average([]));
 module.exports = average;
