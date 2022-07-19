@@ -35,5 +35,4 @@ const average = (array) => {
   return avg;
 };
 
-console.log(average([]));
 module.exports = average;
