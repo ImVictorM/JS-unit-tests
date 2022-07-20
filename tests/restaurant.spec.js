@@ -95,6 +95,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
+    //ref https://stackoverflow.com/questions/46543562/expected-to-be-jasmine-how-to-check-empty-array
+    
+    const testFourReceived = createMenu(randomObj);
+    expect(testFourReceived.consumption).toEqual([]);
 
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
