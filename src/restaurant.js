@@ -93,9 +93,37 @@
 // - retornará o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (obj) => ({
-  fetchMenu: () => obj,
-  consumption: [],
-});
+// const addConsumption = (food) => menu.consumption.push(food);
 
+const createMenu = (obj) => {
+  const menu = {
+    fetchMenu: () => obj,
+    consumption: [],
+    order: (food) => menu.consumption.push(food),
+   
+    pay: () => {
+      // recebi uma ajudinha do ronald <3
+      const currentMenu = menu.fetchMenu();
+      // ref: https://www.javascripttutorial.net/es-next/javascript-object-spread/
+      // motivo para usar object spread: lint
+      // O que ele faz: "desempacota" propriedades do objeto ou array
+      const drinksAndFoods = { ...currentMenu.food, ...currentMenu.drink };
+      let total = 0;
+
+      // ref: https://www.w3schools.com/jsref/jsref_foreach.asp
+      menu.consumption.forEach((orderedItem) => {
+        for (const key in drinksAndFoods) {
+          if (key === orderedItem) {
+            total += drinksAndFoods[key];
+          }
+        }
+      });
+      // 10% extra
+      total *= 1.1;
+      return total;
+    },
+
+  };
+  return menu;
+};
 module.exports = createMenu;

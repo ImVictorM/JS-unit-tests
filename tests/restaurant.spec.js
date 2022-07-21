@@ -96,7 +96,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: []
     // ```
     //ref https://stackoverflow.com/questions/46543562/expected-to-be-jasmine-how-to-check-empty-array
-    
+
     const testFourReceived = createMenu(randomObj);
     expect(testFourReceived.consumption).toEqual([]);
 
@@ -111,6 +111,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
+    const testFiveReceived = createMenu(randomObj);
+    testFiveReceived.order('coxinha');
+    expect(testFiveReceived.consumption).toEqual(['coxinha']);
+
 
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -122,6 +126,13 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("sopa");
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+
+    const testSixReceived = createMenu();
+    testSixReceived.order('coxinha');
+    testSixReceived.order('agua');
+    testSixReceived.order('sopa');
+    testSixReceived.order('sashimi');
+    expect(testSixReceived.consumption).toEqual(["coxinha", "agua", "sopa", "sashimi"]);
     // ```
 
     // Agora faça o TESTE 7 deste arquivo.
@@ -134,6 +145,11 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.consumption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
+    const testSevenReceived = createMenu(randomObj);
+    testSevenReceived.order('coxinha');
+    testSevenReceived.order('agua');
+    testSevenReceived.order('coxinha');
+    expect(testSevenReceived.consumption).toEqual(['coxinha', 'agua', 'coxinha']);
 
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -145,6 +161,16 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
+    const testEightReceived = createMenu(
+      {
+        food: { coxinha: 3.9, sopa: 9.9 },
+        drink: { agua: 3.9, cerveja: 6.9 },
+      }
+    );
+    testEightReceived.order('coxinha');
+    testEightReceived.order('agua');
+    testEightReceived.order('coxinha');
+    expect(testEightReceived.pay()).toBeCloseTo(12.87);
 
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
