@@ -1,13 +1,51 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# JavaScript Unit Tests 🧰
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+In this project, some functions were implemented to solve proposed problems, and to ensure that the implementation of the methods were correct, it was made unit tests.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+In this project, I was able to:
+
+- Write unit tests using the NodeJS Jest module to verify the correct functioning of the functions;
+- Write functions so that they meet already implemented tests;
+- Write tests and functions using a test-driven development approach.
+
+src/ path corresponds to where the functions are located.</br>
+tests/ path corresponds to where the tests are located.
+
+## Used Technologies
+<table>
+    <thead>
+        <tr>
+            <th>JavaScript</th>
+            <th>Jest</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" 
+                        alt="javascript" 
+                        width="40" 
+                        height="40"
+                    /> 
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://jestjs.io" target="_blank" rel="noreferrer"> 
+                    <img 
+                        src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" 
+                        alt="jest" 
+                        width="40" 
+                        height="40"
+                    /> 
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## Running the application
+PS: this project doesn't run in a browser
+
+- 1. Clone this repository
+
